@@ -22,5 +22,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
     		],
     	]);
+
+        //factory('App\User', 20)->create();
     }
 }

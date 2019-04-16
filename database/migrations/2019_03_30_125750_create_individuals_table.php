@@ -17,23 +17,23 @@ class CreateIndividualsTable extends Migration
             $table->bigIncrements('id');
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('middlename');
-            $table->text('bio');
-            $table->string('city');
-            $table->string('phone');
+            $table->string('middlename')->nullable();
+            $table->text('bio')->nullable();
+            $table->string('city')->nullable();
+            $table->string('phone')->nullable();
             
-            $table->string('education');
-            $table->text('education_description');
+            $table->string('education')->nullable();
+            $table->text('education_description')->nullable();
             
-            $table->string('immigration_status');
-            $table->boolean('immigration_seeking');
+            $table->string('immigration_status')->nullable();
+            $table->boolean('immigration_seeking')->nullable();
             
-            $table->string('skills');
-            $table->text('skills_description');
+            $table->string('skills')->nullable();
+            $table->text('skills_description')->nullable();
 
-            $table->string('employment_industry');
+            $table->string('employment_industry')->nullable();
 
-            $table->text('previous_positions');
+            $table->text('previous_positions')->nullable();
 
             $table->bigInteger('residence_state')->unsigned();
             $table->bigInteger('degree_id')->unsigned();

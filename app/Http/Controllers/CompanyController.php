@@ -28,7 +28,6 @@ class CompanyController extends Controller
      */
     public function create()
     {
-
         $user = Auth::user();
         if ($user->companies->count() > 0) {
             return redirect()->route('company.edit', ['id'=>$user->companies[0]->id]);
@@ -76,9 +75,13 @@ class CompanyController extends Controller
      * @param  \App\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function show(Company $company)
+    public function show(Company $company, $id)
     {
-        //
+        $user = Auth::user();
+        return view('company/show',[
+            'user'      => $user,
+            'item'      => Company::find($id),
+        ]);
     }
 
     /**

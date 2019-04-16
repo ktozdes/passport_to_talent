@@ -17,6 +17,7 @@ class CreateFilablesTable extends Migration
             $table->bigIncrements('id');
             $table->string('src');
             $table->string('name');
+            $table->string('resize_name');
             $table->string('file_type');
             $table->unsignedInteger('filable_id')->unsigned();
             $table->string('filable_type');

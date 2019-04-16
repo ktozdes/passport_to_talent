@@ -6,12 +6,17 @@
 		<div class="control">
 			<div class="select">
 				<select name="{{$name}}">
-					<option>{{$placeholder}}</option>
+					<option value="0">{{$placeholder}}</option>
 					@foreach ($list as $singleItem)
 					<option value="{{$singleItem->$option_id}}" {{$value == $singleItem->$option_id ? 'selected' : ''}}>{{$singleItem->$option_text}}</option>
 					@endforeach
 				</select>
 			</div>
+			@if (isset($required))
+			<p class="help is-danger">
+		        This field is required
+		    </p>
+		    @endif
 		</div>
 	</div>
 </div>

@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Job;
+use App\Company;
+use App\User;
+use App\Individual;
+
+use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller
 {
     /**
@@ -27,10 +34,9 @@ class HomeController extends Controller
     }
     public function employer()
     {
-        return view('page/employer');
-    }
-    public function individual()
-    {
-        return view('welcome');
+        $jobs = Job::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->paginate(15)->onEachSide(2);
+        return view('page/employer', [
+            'jobs'=> $jobs,
+        ]);
     }
 }

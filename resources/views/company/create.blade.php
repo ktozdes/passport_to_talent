@@ -1,9 +1,6 @@
-@extends('layouts.master')
+@extends('layouts.master-employer')
 
 @section('main_menu')
-        <li><a href="{{ URL::route('employer') }}">Employer</a></li>
-        <li class="is-active"><a href="{{ URL::route('company.create') }}">Manage Company</a></li>
-        <li><a href="{{ url('#') }}">Jobs</a></li>
 @endsection
 
 @section('content')

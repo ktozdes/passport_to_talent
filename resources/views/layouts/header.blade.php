@@ -14,10 +14,13 @@
     @yield('custom_scripts')
     
     <script type="text/javascript">
-		var APP_URL = {!! json_encode(url('/')) !!}
+		var app_urls = {};
+        app_urls.home = {!! json_encode(url('/')) !!}
+        app_urls.apply_to_job = '{!! URL::route('individual.apply_to_job' ) !!}'
 	</script>
 
 	<link  href="{{ URL::asset('public/css/main.css') }}" rel="stylesheet">
+    <script src="{{ URL::asset('public/js/app.js') }}"></script>
     <script src="{{ URL::asset('public/js/main.js') }}"></script>
 	
 

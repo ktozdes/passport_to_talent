@@ -53,4 +53,12 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Company')->latest();
     }
+    public function individual()
+    {
+        return $this->hasOne('App\Individual');
+    }
+    public function jobs()
+    {
+        return $this->hasMany('App\Job');
+    }
 }

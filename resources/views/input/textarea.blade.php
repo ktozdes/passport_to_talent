@@ -7,6 +7,12 @@
 			<div class="control">
 				<textarea class="textarea"  name="{{$name}}" placeholder="{{$placeholder}}">{{$value}}</textarea>
 			</div>
+			
+			@if (isset($required))
+			<p class="help is-danger">
+		        This field is required
+		    </p>
+		    @endif
 		</div>
 	</div>
 </div>

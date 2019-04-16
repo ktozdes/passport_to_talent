@@ -1,10 +1,6 @@
-@extends('layouts.master')
+@extends('layouts.master-employer')
 
 @section('main_menu')
-        <li class="is-active"><a href="{{ URL::route('employer') }}">Employer</a></li>
-        <li><a href="{{ URL::route('company.create') }}">Manage Company</a></li>
-        <li><a href="{{ url('#') }}">Jobs</a></li>
-        <li><a href="{{ URL::route('profile.edit') }}">Profile</a></li>
 @endsection
 
 @section('content')
@@ -12,9 +8,38 @@
         <div class="container has-text-centered">
         	<div class="columns is-vcentered">
                 <div class="column">
-                    <figure class="image">
-                        <img src="https://picsum.photos/1900/400/?random" alt="Description">
-                    </figure>
+                    {{ $jobs->links() }}
+                    @foreach ($jobs as $job)
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-left">
+                            <span class="tag is-success is-medium">Applied Individuals Number: 
+                            {{$job->individuals->count()}}</span>
+                            </div>
+                        <div class="media-content">
+                            <div class="content">
+                                <strong>Position</strong>: {{$job->position}}
+                                <br>
+                                <br>
+
+                                <div class="company-container">
+                                    <small><strong>Company</strong>: {{$job->company->name}}</small>
+                                </div>
+                                <div class="salary-container">
+                                    <small><strong>salary</strong>: {{$job->salary_range}}</small>
+                                </div>
+                                <div class="job-description-container">
+                                    {{$job->job_description}}
+                                </div>
+                                <p class="has-text-right">
+                                    <a href="{{URL::route('job.show', [$job->id] )}}" class="button is-small is-link is-outlined">More Info</a>
+                                </p>
+                            </div>
+                        </div>
+                        </article>
+                    </div>
+                    @endforeach
+                    {{ $jobs->links() }}
                 </div>
             </div>
             <div class="columns is-vcentered">

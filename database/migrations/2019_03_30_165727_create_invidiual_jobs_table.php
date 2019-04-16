@@ -13,9 +13,9 @@ class CreateInvidiualJobsTable extends Migration
      */
     public function up()
     {
-        Schema::create('invidiual_jobs', function (Blueprint $table) {
+        Schema::create('individual_job', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('status');
+            $table->string('status')->default('applied');
             $table->bigInteger('job_id')->unsigned();
             $table->bigInteger('individual_id')->unsigned();
             $table->timestamps();
@@ -29,6 +29,6 @@ class CreateInvidiualJobsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('invidiual_jobs');
+        Schema::dropIfExists('individual_job');
     }
 }

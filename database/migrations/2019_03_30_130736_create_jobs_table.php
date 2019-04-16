@@ -14,23 +14,24 @@ class CreateJobsTable extends Migration
     public function up()
     {
         Schema::create('jobs', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('position');
-            $table->text('job_description');
+            $table->text('job_description')->nullable();
             $table->string('status');
             
-            $table->string('education');
-            $table->text('education_description');
+            $table->bigInteger('degree_id')->unsigned();
+            $table->text('education_description')->nullable();
             
-            $table->string('immigration_offering');
+            $table->bigInteger('immigration_offering_id')->unsigned();
             
-            $table->string('skills');
-            $table->text('skills_description');
+            $table->string('skills')->nullable();
+            $table->text('skills_description')->nullable();
 
-            $table->string('employment_industry');
+            $table->string('employment_industry')->nullable();
 
             $table->string('salary_range');
-            $table->text('salary_description');
-            $table->text('offered_benefit');
+            $table->text('salary_description')->nullable();
+            $table->text('offered_benefit')->nullable();
 
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('company_id')->unsigned();
