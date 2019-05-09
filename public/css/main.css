@@ -4,3 +4,38 @@ body.individual .navbar-end li.employer-menu{
 body.employer .navbar-end li.individual-menu{
 	display: none;
 }
+body.auth .navbar-end li.individual-menu, body.auth .navbar-end li.employer-menu{
+	display: none;
+}
+
+.dropzone {
+    min-height: auto;
+    border: none;
+    min-height: 150px;
+    border-radius: 3px;
+}
+.dropzone .message {
+	background: transparent;
+    padding: 20px 20px;
+}
+.dropzone .dz-preview{
+	background: transparent;
+}
+.dropzone .dz-preview.dz-image-preview{
+	background: transparent;
+}
+.dropzone .dz-preview .dz-image{
+    border-radius: 3px;
+}
+.dropzone .dz-preview .dz-image img{
+    
+	transition: all 0.5s ease;
+}
+.dropzone .dz-preview:hover .dz-image img{
+	blur: none;
+	-webkit-filter:none;
+	transform: scale(1.05, 1.05);
+}
+.dropzone .dz-preview.dz-image-preview .dz-details{
+	display: none;
+}

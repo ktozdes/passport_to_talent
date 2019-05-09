@@ -3,7 +3,6 @@ Dropzone.options.myDropzone = {
     uploadMultiple: true,
     parallelUploads: 2,
     maxFilesize: 16,
-    previewTemplate: document.querySelector('#preview').innerHTML,
     addRemoveLinks: true,
     dictRemoveFile: 'Remove file',
     dictFileTooBig: 'Image is larger than 16MB',
@@ -12,7 +11,7 @@ Dropzone.options.myDropzone = {
     init: function () {
         this.on("removedfile", function (file) {
             $.post({
-                url: 'file/destroy',
+                url: url.image_destroy,
                 data: {id: file.name, _token: $('[name="_token"]').val()},
                 dataType: 'json',
                 success: function (data) {

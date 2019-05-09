@@ -10,8 +10,6 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
-
-    @yield('custom_scripts')
     
     <script type="text/javascript">
 		var app_urls = {};
@@ -23,5 +21,7 @@
     <script src="{{ URL::asset('public/js/app.js') }}"></script>
     <script src="{{ URL::asset('public/js/main.js') }}"></script>
 	
+    
+    @yield('custom_scripts')
 
 </head>

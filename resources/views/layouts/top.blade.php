@@ -23,11 +23,11 @@
 			                    @auth
 			                    	<li><a href="{{ url('/logout') }}">Logout</a></li>
 			                    @else
-			                        <li><a href="{{ route('login') }}">Login</a>
+			                        <li><a href="{{ route('login') }}">Login</a></li>
 			                        @if (Route::has('register'))
-			                            <a href="{{ route('register') }}">Register</a>
+			                        <li><a href="{{ route('register') }}">Register</a></li>
 			                        @endif
-			                        </li>
+			                        
 		                    	@endauth
 				            	@endif
 								</ul>

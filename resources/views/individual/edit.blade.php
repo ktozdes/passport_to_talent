@@ -6,7 +6,7 @@
 @section('content')
     <div class="hero-body">
         <div class="container has-text-left">
-            <div class="columns is-vcentered">
+            <div class="columns is-vtop">
                 <div class="column is-three-quarters">
                     <form action="{{URL::route('individual.update', [$item->id])}}" method="post">
 
@@ -160,12 +160,7 @@
                 </div>
                 <div class="column">
                     <h1 class="title is-2">Overview Info</h1>
-                    <h2 class="subtitle is-4">Personal Info</h2>
-                    <br>
-                    <p class="has-text-centered">Salam popolam</p>
-                    <p class="has-text-centered">
-                        <a class="button is-medium is-info is-outlined">Learn more</a>
-                    </p>
+                    @include('layouts.uploader', ['id' => $item->id, 'model' => 'Individual'])
                 </div>
             </div>
         </div>
